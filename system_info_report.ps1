@@ -1,8 +1,8 @@
 ﻿$value = Get-ComputerInfo
 $ip = Get-NetIPConfiguration
-$value, $ip | Out-File -FilePath C:\Users\$env:UserName\Downloads\test.txt
+$value, $ip | Out-File -FilePath C:\Users\$env:username\Downloads\test.txt
 
-$attachment = "C:\Users\user\Downloads\test.txt"
+$attachment = "C:\Users\$env:username\Downloads\test.txt"
 $EmailTo = "avigepal75@outlook.com"
 $EmailFrom = "avigepal57@outlook.com"
 $Subject = "hello there!!" 

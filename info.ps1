@@ -1,4 +1,4 @@
-﻿$value = Get-ComputerInfo
+$value = Get-ComputerInfo
 $ip = Get-NetIPConfiguration
 $value, $ip | Out-File -FilePath C:\Users\$env:username\Downloads\test.txt
 
